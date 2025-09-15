@@ -13,4 +13,8 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false } // ✅ Render DB এর জন্য SSL
 });
 
+pool.connect()
+  .then(() => console.log("✅ Connected to PostgreSQL"))
+  .catch((err) => console.error("❌ DB connection error:", err));
+
 module.exports = pool;
