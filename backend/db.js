@@ -10,6 +10,7 @@ const pool = new Pool({
   max: 10, // maximum number of clients in the pool
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
+  ssl: { rejectUnauthorized: false } // ✅ Render DB এর জন্য SSL
 });
 
 module.exports = pool;
